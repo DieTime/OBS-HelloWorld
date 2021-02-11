@@ -6,15 +6,16 @@ Version:    1.0.0
 BuildRequires:  cmake
 
 %description
-Test OBS app
+Test OBS package with Hello World program
+
+%prep
+%setup -q
 
 %build
-cmake -DCMAKE_BUILD_TYPE=Release -S . -B %{build_folder}
-cmake --build %{build_folder} --config Release
+%cmake_build
 
 %install
-mkdir -p %{buildroot}/%{_bindir}
-install -m 0755 %{build_folder}/%{name} %{buildroot}/%{_bindir}/%{name}
+%make_install
 
 %files
 %{_bindir}/%{name}
