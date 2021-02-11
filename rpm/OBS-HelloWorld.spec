@@ -15,7 +15,7 @@ Test OBS package with Hello World program
 %cmake_build
 
 %install
-%make_install
+%cmake_install
 
 %files
 %{_bindir}/%{name}
